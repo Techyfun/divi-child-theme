@@ -1,10 +1,11 @@
 <?php
-/**
-
- * @author Sajjad
-
+/*
+ * Theme options for wp-admin login page edit
+ * @link https://developer.wordpress.org/themes/basics/theme-functions
+ * @package Child Theme
+ * @since 1.0.0
  * @copyright 2022
-
+ * @author Sajjad
  */
 if (!defined('ABSPATH')) die();
 // Login Editor
@@ -13,11 +14,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_panel( 'ds_login_editor_panel', array(
 
         'priority'       => 30,
-
         'capability'     => 'edit_theme_options',
-
         'title'          => __('Login Editor'),
-
         'description'    => __('Customize the login of your website.'),
 
     ));
@@ -27,9 +25,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_logo_section', array(
 
         'priority' => 5,
-
         'title' => __('Logo'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -37,9 +33,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_text_section', array(
 
         'priority' => 10,
-
         'title' => __('Text Options'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -47,9 +41,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_background_section', array(
 
         'priority' => 15,
-
         'title' => __('Background'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -57,9 +49,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_form_bg_section', array(
 
         'priority' => 20,
-
         'title' => __('Form Background'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -67,9 +57,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_form_section', array(
 
         'priority' => 25,
-
         'title' => __('Form Style'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -77,9 +65,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_field_section', array(
 
         'priority' => 30,
-
         'title' => __('Fields Style'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -87,9 +73,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_button_section', array(
 
         'priority' => 35,
-
         'title' => __('Edit Button'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -97,9 +81,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_section('ds_login_advanced_section', array(
 
         'priority' => 40,
-
         'title' => __('Custom CSS'),
-
         'panel'  => 'ds_login_editor_panel',
 
     ));
@@ -109,7 +91,6 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_logo', array(
 
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -117,11 +98,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ds_login_logo', array(
 
         'label' => __('Login Logo'),
-
         'section' => 'ds_login_logo_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_logo'
 
     )));
@@ -129,9 +107,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_logo_width', array(
 
         'default' => '84px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -139,11 +115,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_logo_width', array(
 
         'label' => __('Logo Width'),
-
         'section' => 'ds_login_logo_section',
-
         'priority' => 10,
-
         'settings' => 'ds_login_logo_width'
 
     ));
@@ -151,9 +124,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_logo_height', array(
 
         'default' => '84px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -161,11 +132,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_logo_height', array(
 
         'label' => __('Logo Height'),
-
         'section' => 'ds_login_logo_section',
-
         'priority' => 15,
-
         'settings' => 'ds_login_logo_height'
 
     ));
@@ -173,9 +141,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_logo_padding', array(
 
         'default' => '5px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -183,11 +149,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_logo_padding', array(
 
         'label' => __('Padding Bottom'),
-
         'section' => 'ds_login_logo_section',
-
         'priority' => 20,
-
         'settings' => 'ds_login_logo_padding'
 
     ));
@@ -195,7 +158,6 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_bg_image', array(
 
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -205,11 +167,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ds_login_bg_image', array(
 
         'label' => __('Background Image'),
-
         'section' => 'ds_login_background_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_bg_image'
 
     )));
@@ -217,9 +176,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_bg_color', array(
 
         'default' => '#F1F1F1',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -227,11 +184,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_bg_color', array(
 
         'label' => __('Background Color'),
-
         'section' => 'ds_login_background_section',
-
         'priority' => 10,
-
         'settings' => 'ds_login_bg_color'
 
     )));
@@ -239,7 +193,6 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_bg_size', array(
 
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -247,11 +200,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_bg_size', array(
 
         'label' => __('Background Size'),
-
         'section' => 'ds_login_background_section',
-
         'priority' => 15,
-
         'settings' => 'ds_login_bg_size'
 
     ));
@@ -261,7 +211,6 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_form_bg_image', array(
 
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -269,11 +218,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'ds_login_form_bg_image', array(
 
         'label' => __('Background Image'),
-
         'section' => 'ds_login_form_bg_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_form_bg_image'
 
     )));
@@ -281,9 +227,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_form_bg_color', array(
 
         'default' => '#FFF',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -292,11 +236,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_form_bg_color', array(
 
         'label' => __('Background Color'),
-
         'section' => 'ds_login_form_bg_section',
-
         'priority' => 10,
-
         'settings' => 'ds_login_form_bg_color'
 
     )));
@@ -304,9 +245,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_form_width', array(
 
         'default' => '320px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -314,11 +253,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_form_width', array(
 
         'label' => __('Width'),
-
         'section' => 'ds_login_form_section',
-
         'priority' => 15,
-
         'settings' => 'ds_login_form_width'
 
     ));
@@ -326,9 +262,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_form_height', array(
 
         'default' => '194px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -336,11 +270,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_form_height', array(
 
         'label' => __('Height'),
-
         'section' => 'ds_login_form_section',
-
         'priority' => 20,
-
         'settings' => 'ds_login_form_height'
 
     ));
@@ -348,9 +279,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_form_padding', array(
 
         'default' => '26px 24px 46px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -358,11 +287,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_form_padding', array(
 
         'label' => __('Padding'),
-
         'section' => 'ds_login_form_section',
-
         'priority' => 25,
-
         'settings' => 'ds_login_form_padding'
 
     ));
@@ -372,9 +298,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_field_width', array(
 
         'default' => '100%',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -382,11 +306,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_field_width', array(
 
         'label' => __('Input Field Width'),
-
         'section' => 'ds_login_field_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_field_width'
 
     ));
@@ -394,9 +315,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_field_margin', array(
 
         'default' => '2px 6px 16px 0px',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -404,11 +323,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_field_margin', array(
 
         'label' => __('Input Field Margin'),
-
         'section' => 'ds_login_field_section',
-
         'priority' => 10,
-
         'settings' => 'ds_login_field_margin'
 
     ));
@@ -416,9 +332,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_field_bg', array(
 
         'default' => '#FFF',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -426,11 +340,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_field_bg', array(
 
         'label' => __('Input Field Background'),
-
         'section' => 'ds_login_field_section',
-
         'priority' => 15,
-
         'settings' => 'ds_login_field_bg'
 
     )));
@@ -438,9 +349,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_field_color', array(
 
         'default' => '#333',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -448,11 +357,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_field_color', array(
 
         'label' => __('Input Field Color'),
-
         'section' => 'ds_login_field_section',
-
         'priority' => 20,
-
         'settings' => 'ds_login_field_color'
 
     )));
@@ -460,9 +366,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_field_label', array(
 
         'default' => '#777',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -470,11 +374,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_field_label', array(
 
         'label' => __('Label Color'),
-
         'section' => 'ds_login_field_section',
-
         'priority' => 25,
-
         'settings' => 'ds_login_field_label'
 
     )));
@@ -484,9 +385,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_button_bg', array(
 
         'default' => '#2EA2CC',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -494,11 +393,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_button_bg', array(
 
         'label' => __('Button Background'),
-
         'section' => 'ds_login_button_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_button_bg'
 
     )));
@@ -506,9 +402,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_button_border', array(
 
         'default' => '#0074A2',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -516,11 +410,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_button_border', array(
 
         'label' => __('Button Border'),
-
         'section' => 'ds_login_button_section',
-
         'priority' => 10,
-
         'settings' => 'ds_login_button_border'
 
     )));
@@ -528,9 +419,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_button_hover_bg', array(
 
         'default' => '#1E8CBE',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -538,11 +427,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_button_hover_bg', array(
 
         'label' => __('Button Background (Hover)'),
-
         'section' => 'ds_login_button_section',
-
         'priority' => 15,
-
         'settings' => 'ds_login_button_hover_bg'
 
     )));
@@ -550,9 +436,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_button_hover_border', array(
 
         'default' => '#0074A2',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -560,11 +444,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_button_hover_border', array(
 
         'label' => __('Button Border (Hover)'),
-
         'section' => 'ds_login_button_section',
-
         'priority' => 20,
-
         'settings' => 'ds_login_button_hover_border'
 
     )));
@@ -573,9 +454,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_button_shadow', array(
 
         'default' => '#78C8E6',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -583,11 +462,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_button_shadow', array(
 
         'label' => __('Button Box Shadow'),
-
         'section' => 'ds_login_button_section',
-
         'priority' => 25,
-
         'settings' => 'ds_login_button_shadow'
 
     )));
@@ -595,9 +471,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_button_color', array(
 
         'default' => '#FFF',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -605,11 +479,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_button_color', array(
 
         'label' => __('Button Color'),
-
         'section' => 'ds_login_button_section',
-
         'priority' => 30,
-
         'settings' => 'ds_login_button_color'
 
     )));
@@ -619,7 +490,6 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_custom_css', array(
 
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -627,13 +497,9 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control('ds_login_custom_css', array(
 
         'label' => __('Not found the option you wanted? Add your own CSS here...'),
-
         'type' => 'textarea',
-
         'section' => 'ds_login_advanced_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_custom_css'
 
     ));
@@ -641,9 +507,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_text_color', array(
 
         'default' => '#999',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -651,11 +515,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_text_color', array(
 
         'label' => __('Text Color'),
-
         'section' => 'ds_login_text_section',
-
         'priority' => 5,
-
         'settings' => 'ds_login_text_color'
 
     )));
@@ -663,9 +524,7 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_setting('ds_login_text_color_hover', array(
 
         'default' => '#2EA2CC',
-
         'type' => 'option',
-
         'capability' => 'edit_theme_options',
 
     ));
@@ -673,11 +532,8 @@ function ds_register_login_editor($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'ds_login_text_color_hover', array(
 
         'label' => __('Text Color (Hover)'),
-
         'section' => 'ds_login_text_section',
-
         'priority' => 10,
-
         'settings' => 'ds_login_text_color_hover'
 
     )));
@@ -685,11 +541,9 @@ function ds_register_login_editor($wp_customize) {
 
     }
 
-
 add_action('customize_register', 'ds_register_login_editor');
 
 function ds_login_customizer() {
-
 $logo_url = get_option('ds_login_logo');
 
 $logo_width = get_option('ds_login_logo_width');
@@ -768,7 +622,6 @@ body.login {
 
     }
 
-    
 body.login #login h1 a {
 
 <?php if( !empty($logo_url)) : ?>
@@ -803,7 +656,6 @@ body.login #login h1 a {
 
 }
 
-
 #loginform {
 
 <?php if( !empty($form_bg_image)) : ?>
@@ -837,7 +689,6 @@ body.login #login h1 a {
 <?php endif; ?>
 
 }
-
 
 #login {
 
@@ -877,7 +728,6 @@ body.login #login h1 a {
 <?php endif; ?>
 
 }
-
 
 .login label {
 
@@ -946,8 +796,6 @@ body.login #login h1 a {
 
 }
 
-
-
 .login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
 
 <?php if( !empty($other_color_hover)) : ?>
@@ -959,17 +807,13 @@ body.login #login h1 a {
 }
 
 
-
 <?php if( !empty($other_css)) : ?>
 
     <?php echo $other_css; ?>
 
 <?php endif; ?>
 
-
-
 </style>
-
 
 
 <?php
